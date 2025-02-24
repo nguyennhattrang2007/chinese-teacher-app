@@ -9,7 +9,7 @@ import SignIn from "./SignIn";
 
 const Nav = styled.nav`
   background-color: #4a90e2;
-  padding: 1rem 2rem;
+  padding: 0.5rem 2rem;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -57,6 +57,11 @@ const LogoutButton = styled.button`
   }
 `;
 
+const SquirrelImage = styled.img`
+  width: 60px;
+  height: 60px;
+`;
+
 const Navbar = () => {
   const { user } = useContext(AuthContext);
 
@@ -72,12 +77,17 @@ const Navbar = () => {
 
   return (
     <Nav>
-      <Logo>Tiếng Trung Onni</Logo>
+      <div style={{ display: "flex", gap: "4px", alignItems: "center" }}>
+        <Logo>
+          <Link to="/">Tiếng Trung Onni</Link>
+        </Logo>
+        <SquirrelImage src="/img/soc.png" alt="Onni Mascot" />
+      </div>
       <NavLinks>
         <Link to="/introduction">Giới Thiệu</Link>
         <Link to="/lessons">Bài Học</Link>
-        <Link to="/schedule">Lịch Học</Link>
-        <Link to="/exam-homework">Đề Kiểm Tra/BTVN</Link>
+        <Link to="/schedule">Lộ trình học</Link>
+        <Link to="/exam-homework">Kiểm Tra</Link>
       </NavLinks>
       <UserSection>
         {user ? (

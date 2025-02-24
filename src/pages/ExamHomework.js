@@ -85,14 +85,20 @@ const ExamHomework = () => {
     const { data, error } = await supabase.storage
       .from("assignments")
       .list("", { limit: 100, offset: 0 });
+
     if (error) {
       console.error("Error fetching assignments:", error);
       return;
     }
-    console.log("Fetched assignments:", data);
-    // Lấy publicUrl cho mỗi file
+
+    // Lọc bỏ đối tượng .emptyFolderPlaceholder
+    const filteredData = data.filter(
+      (file) => file.name !== ".emptyFolderPlaceholder"
+    );
+
+    // Lấy publicUrl cho mỗi file sau khi lọc
     const filesWithUrls = await Promise.all(
-      data.map(async (file) => {
+      filteredData.map(async (file) => {
         const { data: publicUrlData, error: publicUrlError } = supabase.storage
           .from("assignments")
           .getPublicUrl(file.name);
@@ -104,7 +110,6 @@ const ExamHomework = () => {
           );
           return { ...file, publicUrl: null };
         }
-        console.log("File:", file.name, "Public URL:", publicUrlData.publicUrl);
         return { ...file, publicUrl: publicUrlData.publicUrl };
       })
     );
@@ -121,18 +126,27 @@ const ExamHomework = () => {
     }
   };
 
+  // Hàm sanitize tên file
+  const sanitizeFileName = (filename) => {
+    return filename
+      .normalize("NFD") // Tách các dấu thành ký tự riêng
+      .replace(/[\u0300-\u036f]/g, "") // Loại bỏ dấu
+      .replace(/\s+/g, "-") // Thay khoảng trắng bằng dấu gạch ngang
+      .replace(/[^a-zA-Z0-9_\-.]/g, ""); // Loại bỏ các ký tự không hợp lệ
+  };
+
+  // Cập nhật handleUpload
   const handleUpload = async () => {
     if (!selectedFile) return;
     setUploading(true);
     try {
-      // Tạo tên file: timestamp + "_" + tên gốc file
-      const fileName = `${Date.now()}_${selectedFile.name}`;
+      // Lấy tên file đã làm sạch
+      const sanitizedFileName = sanitizeFileName(selectedFile.name);
+      const fileKey = `${Date.now()}_${sanitizedFileName}`;
+
       const { data, error } = await supabase.storage
         .from("assignments")
-        .upload(fileName, selectedFile, {
-          cacheControl: "3600",
-          upsert: false,
-        });
+        .upload(fileKey, selectedFile, { cacheControl: "3600", upsert: false });
       if (data) console.log(data);
       if (error) throw error;
       alert("File uploaded successfully!");

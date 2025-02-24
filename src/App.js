@@ -11,6 +11,7 @@ import Schedule from "./pages/Schedule";
 import ExamHomework from "./pages/ExamHomework";
 import Login from "./pages/Login";
 import GlobalStyle from "./globalStyles";
+import Footer from "./components/Footer";
 
 function App() {
   return (
@@ -63,6 +64,7 @@ function App() {
           />
         </Routes>
       </Router>
+      <Footer />
     </AuthProvider>
   );
 }

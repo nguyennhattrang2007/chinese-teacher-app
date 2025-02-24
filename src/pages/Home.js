@@ -1,31 +1,94 @@
-// src/pages/Home.js
+// src/pages/Introduction.js
 import React from "react";
 import styled from "styled-components";
 
+/* Container toàn màn hình với background */
 const Container = styled.div`
-  padding: 3rem;
+  position: relative;
+  height: calc(100vh - 170px);
+  background: url("/img/background.jpg") no-repeat center center/cover;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
   text-align: center;
 `;
 
-const Heading = styled.h1`
-  font-size: 2.5rem;
+/* Tiêu đề chính */
+const Title = styled.h1`
+  font-size: 3rem;
   color: #4a90e2;
-  margin-bottom: 1rem;
+  margin-top: 3rem;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
 `;
 
-const SubText = styled.p`
-  font-size: 1.125rem;
-  color: #666;
+const SubTitle = styled.h1`
+  font-size: 5rem;
+  color: #4a90e2;
+  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+`;
+
+/* Ảnh con sóc đặt ở góc phải */
+const SquirrelImage = styled.img`
+  position: absolute;
+  bottom: 0;
+  right: 20%;
+  width: 350px;
+  height: auto;
+`;
+
+/* Hộp thoại (speech bubble) */
+const SpeechBubble = styled.div`
+  position: absolute;
+  bottom: 25%; /* chỉnh toạ độ dọc cho phù hợp */
+  right: 40%; /* chỉnh toạ độ ngang cho phù hợp */
+  width: 400px;
+  transform: rotate(-10deg); /* nghiêng toàn bộ khung một chút */
+
+  background: #fff;
+  border: 2px solid #aaa;
+  border-radius: 20px;
+  padding: 1rem;
+  text-align: center;
+  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+
+  /* Tạo đuôi cho hộp thoại */
+  &:after {
+    content: "";
+    position: absolute;
+    bottom: -78px; /* cho đuôi nằm dưới khung */
+    right: 100px; /* chỉnh vị trí đuôi */
+    width: 0;
+    height: 0;
+    border: 40px solid transparent;
+    border-top-color: #fff; /* màu đuôi trùng với màu nền khung */
+  }
+`;
+
+/* Nội dung text bên trong hộp thoại */
+const SpeechText = styled.p`
+  font-size: 1.5rem;
+  color: #333;
+  margin: 0;
+  /* Nếu muốn text không bị nghiêng theo khung, xoay ngược lại: */
+  /* transform: rotate(5deg); */
 `;
 
 const Home = () => {
   return (
     <Container>
-      <Heading>Chào mừng đến với Tiếng Trung Onni</Heading>
-      <SubText>Ứng dụng Dạy Tiếng Trung</SubText>
-      <SubText>
-        Hệ thống hỗ trợ giáo viên và học sinh trong quá trình học tập.
-      </SubText>
+      <Title>Chào mừng bạn đến với</Title>
+      <SubTitle>Tiếng Trung Onni</SubTitle>
+
+      {/* Ảnh con sóc */}
+      <SquirrelImage src="/img/soc.png" alt="Onni Mascot" />
+
+      {/* Hộp thoại của con sóc */}
+      <SpeechBubble>
+        <SpeechText>
+          Nếu các bạn đang gặp khó khăn khi học Tiếng Trung không biết bắt đầu
+          từ đâu?, học như thế nào? Hãy để Onni giúp bạn nhé!
+        </SpeechText>
+      </SpeechBubble>
     </Container>
   );
 };
