@@ -59,7 +59,7 @@ function Footer() {
       </FooterItem>
       <FooterItem>
         <IconImage src="/img/youtube.jpg" alt="icon5" />
-        <span>Onnikatie</span>
+        <span>Tiếng Trung Onni</span>
       </FooterItem>
       <FooterItem>
         <IconImage src="/img/wechat.jpg" alt="icon6" />

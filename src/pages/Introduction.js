@@ -21,6 +21,8 @@ const Overlay = styled.div`
   border-radius: 8px;
   padding: 2rem;
   text-align: left;
+  max-height: calc(100vh - 200px);
+  overflow-y: scroll;
 `;
 
 const Title = styled.h1`
@@ -38,12 +40,11 @@ const SectionTitle = styled.h2`
 `;
 
 const List = styled.ul`
-  list-style-type: disc;
   padding-left: 1.5rem;
   margin-bottom: 1rem;
 `;
 
-const ListItem = styled.li`
+const ListItem = styled.div`
   margin-bottom: 0.5rem;
   line-height: 1.4;
   font-size: 1.2rem;
@@ -62,6 +63,60 @@ const About = () => {
     <Container>
       <Overlay>
         <Title>Giới thiệu</Title>
+
+        <SectionTitle>
+          🎉 Lớp tiếng Trung Online dành cho người mới bắt đầu.
+        </SectionTitle>
+        <strong style={{ fontSize: "20px" }}>
+          Cam kết đầu ra HSK3+, không đỗ ={">"} học lại miễn phí.
+        </strong>
+        <List>
+          <ListItem>
+            - Bạn yêu thích tiếng Trung nhưng không biết bắt đầu từ đâu?
+            <br />
+            - Lịch trình bận rộn khiến bạn khó theo học trực tiếp?
+            <br />
+            ---------------------
+            <br />
+            Tham gia ngay{" "}
+            <span style={{ fontWeight: 700 }}>LỚP TIẾNG TRUNG ONLINE</span> cùng
+            giảng viên tại <span style={{ fontWeight: 700 }}>Onni</span>.
+            <br />
+            🔥 Lớp học online buổi chiều & buổi tối, thời gian khoảng từ 14h00
+            đến 16h00 hoặc từ 19h00 đến 21h00.
+            <br />
+            🔥 Khai giảng dự kiến: 05/07.
+            <br />
+            🔥 Tiện lợi, linh hoạt thời gian cho các bạn học sinh buổi sáng đi
+            học.
+            <br />
+            📝 Ngoài ra, Onni còn có lớp học cho các bạn nhỏ từ 8 đến 14 tuổi
+            muốn tiếp xúc, làm quen với tiếng Trung.
+            <br />
+            ---------------------
+            <br />
+          </ListItem>
+        </List>
+
+        <SectionTitle>🎉 Nội dung khóa học</SectionTitle>
+        <List>
+          <ListItem>
+            📚 Phát âm chuẩn ngay từ đầu, đào tạo bài bản Nghe, nói, đọc, viết.
+            <br />
+            📚 Ghi nhớ các nét chữ Hán, bộ thủ Tiếng Trung, nắm vững 700800 từ
+            vựng, tự tin giao tiếp cùng người bản địa những cuộc hội thoại hàng
+            ngày.
+            <br />
+            📚 Giao lưu trực tiếp với người Trung Quốc giúp học viên tăng phản
+            xạ giao tiếp.
+            <br />
+            👩‍🏫 Học Online, tương tác trực tiếp cùng giảng viên, giúp kịp thời
+            chỉnh sửa các lỗi thường gặp.
+            <br />
+            🌟 Đăng ký ngay hôm nay để cùng Onni xây dựng một nền tảng Tiếng
+            Trung vững chắc, dễ dàng đạt HSK3 chỉ sau một khóa học bạn nhé!
+          </ListItem>
+        </List>
 
         <SectionTitle>🎉 Giảng viên đồng hành cùng Onni</SectionTitle>
         <List>

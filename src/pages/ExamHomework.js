@@ -71,6 +71,15 @@ const DownloadButton = styled.button`
   cursor: pointer;
 `;
 
+const DeleteButton = styled.button`
+  padding: 0.25rem 0.75rem;
+  background-color: #ff5f5f;
+  color: #fff;
+  border: none;
+  border-radius: 4px;
+  cursor: pointer;
+`;
+
 const ExamHomework = () => {
   const { user } = useContext(AuthContext);
   const teacherEmail = process.env.REACT_APP_TEACHER_EMAIL;
@@ -191,6 +200,23 @@ const ExamHomework = () => {
     }
   };
 
+  // Thêm hàm xóa file
+  const handleDelete = async (fileName) => {
+    try {
+      console.log("Attempting to delete file with key:", fileName);
+      const { data, error } = await supabase.storage
+        .from("assignments")
+        .remove([fileName]);
+      console.log("Remove response:", data, error);
+      if (error) throw error;
+      alert("File đã được xóa thành công!");
+      fetchAssignments(); // cập nhật lại danh sách
+    } catch (error) {
+      console.error("Error deleting file:", error);
+      alert("Xóa file thất bại: " + error.message);
+    }
+  };
+
   return (
     <Container>
       <Heading>Đề Kiểm Tra/Bài Tập Về Nhà</Heading>
@@ -218,7 +244,8 @@ const ExamHomework = () => {
             <thead>
               <tr>
                 <Th>Tên File</Th>
-                <Th>Hành động</Th>
+                <Th>Download</Th>
+                {isTeacher && <Th>Delete</Th>}
               </tr>
             </thead>
             <tbody>
@@ -231,6 +258,13 @@ const ExamHomework = () => {
                     >
                       Download
                     </DownloadButton>
+                  </Td>
+                  <Td>
+                    {isTeacher && (
+                      <DeleteButton onClick={() => handleDelete(file.name)}>
+                        Xóa
+                      </DeleteButton>
+                    )}
                   </Td>
                 </tr>
               ))}
