@@ -31,7 +31,7 @@ const Title = styled.h1`
   margin-bottom: 1.5rem;
   font-weight: bold;
   color: #4a90e2;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(26, 255, 255, 0.5);
 `;
 
 const SectionTitle = styled.h2`
@@ -103,7 +103,7 @@ const About = () => {
           <ListItem>
             📚 Phát âm chuẩn ngay từ đầu, đào tạo bài bản Nghe, nói, đọc, viết.
             <br />
-            📚 Ghi nhớ các nét chữ Hán, bộ thủ Tiếng Trung, nắm vững 700800 từ
+            📚 Ghi nhớ các nét chữ Hán, bộ thủ Tiếng Trung, nắm vững 700-800 từ
             vựng, tự tin giao tiếp cùng người bản địa những cuộc hội thoại hàng
             ngày.
             <br />
@@ -115,6 +115,42 @@ const About = () => {
             <br />
             🌟 Đăng ký ngay hôm nay để cùng Onni xây dựng một nền tảng Tiếng
             Trung vững chắc, dễ dàng đạt HSK3 chỉ sau một khóa học bạn nhé!
+          </ListItem>
+        </List>
+
+        <SectionTitle>
+          🎉 Đặc điểm và quyền lợi của học viên khi đồng hành cùng Onni
+        </SectionTitle>
+        <List>
+          <ListItem>
+            🌟 Được đào tạo từ cơ bản đến nâng cao.
+            <br />
+            🌟 Cam kết đầu ra HSK3+.
+            <br />
+            🌟 Lộ trình học tập rõ ràng, hợp lý, kết hợp giữa học tập và nghỉ
+            ngơi.
+            <br />
+            🔥 Học Online theo hình thức live trực tiếp, tương tác trực tiếp với
+            giảng viên.
+            <br />
+            📚 Được cung cấp tài liệu trước và sau mỗi buổi học. Sau mỗi buổi
+            học sẽ có record để học viên ôn tập.
+            <br />
+            📚 Có group học tập để các bạn học viên trao đổi, giao lưu, hỏi đáp
+            và học tập.
+            <br />
+            🔥 Học viên sẽ được đào tạo chú trọng về phát âm trước khi biết viết
+            Hán tự để đảm bảo có thể giao tiếp thành thạo với người Trung Quốc.
+            <br />
+            🔥 Trong quá trình học, Onni sẽ hợp tác cùng người Trung Quốc để học
+            viên không bị bỡ ngỡ với ngữ điệu của người bản địa Trung Quốc.
+            <br />
+            📚 Sau 1 thời gian học sẽ được làm 1 bài test để kiểm tra tiến độ
+            học.
+            <br />
+            (Được người Trung Quốc trực tiếp kiểm tra, đánh giá phần thi nói.)
+            <br />
+            📚 Học phí hợp lý, phù hợp với cả các bạn học sinh, sinh viên.
           </ListItem>
         </List>
 

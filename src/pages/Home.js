@@ -15,32 +15,32 @@ const Container = styled.div`
 
 /* Tiêu đề chính */
 const Title = styled.h1`
-  font-size: 3rem;
+  font-size: 2rem;
   color: #4a90e2;
-  margin-top: 3rem;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  margin-top: 3%;
+  text-shadow: 2px 2px 5px rgba(26, 255, 255, 0.5);
 `;
 
 const SubTitle = styled.h1`
-  font-size: 5rem;
+  font-size: 4rem;
   color: #4a90e2;
-  text-shadow: 2px 2px 5px rgba(0, 0, 0, 0.5);
+  text-shadow: 2px 2px 5px rgba(26, 255, 255, 0.5);
 `;
 
 /* Ảnh con sóc đặt ở góc phải */
 const SquirrelImage = styled.img`
   position: absolute;
   bottom: 0;
-  right: 20%;
-  width: 350px;
+  right: 15%;
+  width: 250px;
   height: auto;
 `;
 
 /* Hộp thoại (speech bubble) */
 const SpeechBubble = styled.div`
   position: absolute;
-  bottom: 25%; /* chỉnh toạ độ dọc cho phù hợp */
-  right: 40%; /* chỉnh toạ độ ngang cho phù hợp */
+  bottom: 15%; /* chỉnh toạ độ dọc cho phù hợp */
+  right: 35%; /* chỉnh toạ độ ngang cho phù hợp */
   width: 400px;
   transform: rotate(-10deg); /* nghiêng toàn bộ khung một chút */
 
@@ -49,7 +49,7 @@ const SpeechBubble = styled.div`
   border-radius: 20px;
   padding: 1rem;
   text-align: center;
-  box-shadow: 2px 2px 5px rgba(0, 0, 0, 0.3);
+  box-shadow: 2px 2px 5px rgba(26, 255, 255, 0.5);
 
   /* Tạo đuôi cho hộp thoại */
   &:after {
