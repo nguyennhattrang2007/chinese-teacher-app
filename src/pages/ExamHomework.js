@@ -82,8 +82,10 @@ const DeleteButton = styled.button`
 
 const ExamHomework = () => {
   const { user } = useContext(AuthContext);
-  const teacherEmail = process.env.REACT_APP_TEACHER_EMAIL;
-  const isTeacher = user && user.email === teacherEmail;
+  const isTeacher =
+    user &&
+    (user.email === process.env.REACT_APP_TEACHER_EMAIL ||
+      user.email === process.env.REACT_APP_TEACHER_EMAIL1);
 
   const [assignments, setAssignments] = useState([]);
   const [uploading, setUploading] = useState(false);

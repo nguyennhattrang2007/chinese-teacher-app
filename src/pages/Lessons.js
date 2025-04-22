@@ -20,7 +20,10 @@ const Text = styled.p`
 
 const Lessons = () => {
   const { user } = useContext(AuthContext);
-  const isTeacher = user && user.email === process.env.REACT_APP_TEACHER_EMAIL;
+  const isTeacher =
+    user &&
+    (user.email === process.env.REACT_APP_TEACHER_EMAIL ||
+      user.email === process.env.REACT_APP_TEACHER_EMAIL1);
 
   return (
     <Container>
