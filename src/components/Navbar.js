@@ -85,9 +85,9 @@ const Navbar = () => {
       </div>
       <NavLinks>
         <Link to="/introduction">Giới Thiệu</Link>
-        <Link to="/lessons">Bài Học</Link>
+        {/* <Link to="/lessons">Bài Học</Link>
         <Link to="/schedule">Lộ trình học</Link>
-        <Link to="/exam-homework">Kiểm Tra</Link>
+        <Link to="/exam-homework">Kiểm Tra</Link> */}
       </NavLinks>
       <UserSection>
         {user ? (

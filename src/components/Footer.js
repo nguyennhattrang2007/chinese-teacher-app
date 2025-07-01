@@ -35,6 +35,7 @@ const IconImage = styled.img`
   width: 30px;
   height: 30px;
   object-fit: contain;
+  background: #fff;
   border-radius: 50%;
 `;
 
@@ -42,7 +43,9 @@ function Footer() {
   return (
     <FooterContainer>
       <FooterItem>
-        <IconImage src="/img/facebook.jpg" alt="icon1" />
+        <div>
+          <IconImage src="/img/facebook.jpg" alt="icon1" />
+        </div>
         <span>Trung-Anh Onni</span>
       </FooterItem>
       <FooterItem>

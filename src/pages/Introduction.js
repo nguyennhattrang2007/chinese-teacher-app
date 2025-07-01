@@ -159,8 +159,6 @@ const About = () => {
           <ListItem>
             <strong>👩‍🏫 1. Nguyễn Nhật Trang - 2007</strong>
             <br />
-            - Đang học tập tại Trường THPT Thái Phúc.
-            <br />
             - Đã có chứng chỉ HSK4 và HSKK TC.
             <br />
             - “Sĩ tử” cuộc thi “Thanh âm Hán Ngữ 2024” do Hanzii Chinese
@@ -169,13 +167,10 @@ const About = () => {
             - Top 30 cuộc thi “Thanh âm cho em 2024” do Ngoại Ngữ Từ Gốc tổ chức
             và cấp giấy chứng nhận.
             <br />- Giải sáng tạo “Lời yêu ngọt ngào” do Migii HSK tổ chức.
-          </ListItem>
-
-          <ListItem>
-            <strong>👩‍🏫 2. Đặng Phương Uyên - 2007</strong>
-            <br />
-            - Đang học tập tại Trường THPT Nam Đông Quan.
-            <br />- Đã có chứng chỉ HSK4 và HSKK TC.
+            <br />- Top 5 bài thi sáng tạo và top 8 bài thi được yêu thích tại
+            cuộc thi “越南是我家 Việt Nam là nhà" do Nhà Trung tổ chức.
+            <br /> Đã và đang tham gia chuỗi tọa đàm đào tạo giảng viên tiếng
+            Trung cho học sinh Việt Nam do Hệ thống tiếng Trung CTI HSK tổ chức.
           </ListItem>
         </List>
 
