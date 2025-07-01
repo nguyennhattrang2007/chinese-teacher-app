@@ -157,7 +157,7 @@ const About = () => {
         <SectionTitle>🎉 Giảng viên đồng hành cùng Onni</SectionTitle>
         <List>
           <ListItem>
-            <strong>👩‍🏫 1. Nguyễn Nhật Trang - 2007</strong>
+            <strong>👩‍🏫 Nguyễn Nhật Trang - 2007</strong>
             <br />
             - Đã có chứng chỉ HSK4 và HSKK TC.
             <br />
