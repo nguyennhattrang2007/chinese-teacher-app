@@ -85,20 +85,21 @@ const Navbar = () => {
       </div>
       <NavLinks>
         <Link to="/introduction">Giới Thiệu</Link>
-        <Link>Đăng ký</Link>
+        <Link to="/register">Đăng ký</Link>
         {/* <Link to="/lessons">Bài Học</Link>
         <Link to="/schedule">Lộ trình học</Link>
         <Link to="/exam-homework">Kiểm Tra</Link> */}
       </NavLinks>
       <UserSection>
-        {user ? (
+        {/* {user ? (
           <>
             <span style={{ color: "#fff" }}>Xin chào, {user.displayName}</span>
             <LogoutButton onClick={handleLogout}>Logout</LogoutButton>
           </>
         ) : (
           <SignIn />
-        )}
+        )} */}
+        <span style={{ color: "#fff" }}>Xin chào! Cùng đăng ký nhé!</span>
       </UserSection>
     </Nav>
   );

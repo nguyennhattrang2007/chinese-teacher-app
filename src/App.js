@@ -12,6 +12,7 @@ import ExamHomework from "./pages/ExamHomework";
 import Login from "./pages/Login";
 import GlobalStyle from "./globalStyles";
 import Footer from "./components/Footer";
+import Register from "./pages/Register";
 
 function App() {
   return (
@@ -20,25 +21,18 @@ function App() {
         <GlobalStyle />
         <Navbar />
         <Routes>
-          <Route path="/login" element={<Login />} />
+          {/* <Route path="/login" element={<Login />} /> */}
           {/* Các route bên dưới được bảo vệ */}
           <Route
             path="/"
             element={
-              <PrivateRoute>
-                <Home />
-              </PrivateRoute>
+              // <PrivateRoute>
+              <Home />
+              // </PrivateRoute>
             }
           />
-          <Route
-            path="/introduction"
-            element={
-              <PrivateRoute>
-                <Introduction />
-              </PrivateRoute>
-            }
-          />
-          <Route
+          <Route path="/introduction" element={<Introduction />} />
+          {/* <Route
             path="/lessons"
             element={
               <PrivateRoute>
@@ -60,6 +54,14 @@ function App() {
               <PrivateRoute>
                 <ExamHomework />
               </PrivateRoute>
+            }
+          /> */}
+          <Route
+            path="/register"
+            element={
+              // <PrivateRoute>
+              <Register />
+              // </PrivateRoute>
             }
           />
         </Routes>
